@@ -2,6 +2,7 @@ const express= require('express');
 const cors= require('cors');
 const bodyparser=require('body-parser');
 const mongoose= require('mongoose');
+const server = express();
 const PORT = process.env.PORT || 8080
 
 main().catch(err => console.log(err));
@@ -18,7 +19,6 @@ const PhoneBook = new mongoose.Schema({
 const Phone = mongoose.model('PHONEBOOK', PhoneBook);
 
 
-const server = express();
 server.use(cors());
 server.use(bodyparser.json());
 
