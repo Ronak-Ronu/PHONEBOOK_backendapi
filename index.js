@@ -40,5 +40,5 @@ server.get('/db',async (req,res)=>{
 });
 
 server.listen(PORT,()=>{
-    console.log('server is running ronak');
+    console.log(`server is running ronak at port ${PORT} `);
 });
