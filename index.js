@@ -6,7 +6,7 @@ const PORT = process.env.PORT || 8080
 
 main().catch(err => console.log(err));
 async function main() {
-  await mongoose.connect("mongodb+srv://admin:1234@minidb.fj06imn.mongodb.net/?retryWrites=true&w=majority");
+  await mongoose.connect(`${process.env.DATABASE}`);
   console.log('db connected');
 }
 const PhoneBook = new mongoose.Schema({
