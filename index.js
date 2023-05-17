@@ -39,6 +39,12 @@ server.get('/db',async (req,res)=>{
 
 });
 
+server.get('/db/:id', async (req, res) => {
+      const doc = await Phone.findOne({ _id: req.params.id });
+      console.log(doc);
+      res.json(doc);
+  });
+  
 server.listen(PORT,()=>{
     console.log(`server is running ronak at port ${PORT} `);
 });
