@@ -44,6 +44,9 @@ server.get('/db/:id', async (req, res) => {
       console.log(doc);
       res.json(doc);
   });
+server.delete('/delete/:id', async (req, res) => {
+    await Phone.deleteOne({ _id: req.params.id});
+});
   
 server.listen(PORT,()=>{
     console.log(`server is running ronak at port ${PORT} `);
